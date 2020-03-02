@@ -1,4 +1,4 @@
-let SimpleAI = require("../simpleAI-node.js");
+let SimpleAI = require("../build/SimpleAI.js");
 
 let tryFunction = (functionToRun, functionName, expectedOutput) => {
    console.log(`Attempting to run ${functionName}()`);
