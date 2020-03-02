@@ -2,7 +2,7 @@
   "name": "simpleai",
   "version": "1.0.11",
   "description": "A lib to make making neural networks as easy as possible.",
-  "main": "node/index.ts",
+  "main": "node/build/SimpleAI.js",
   "scripts": {
     "test": "node node/tests/test.js",
     "tsc": "tsc"
