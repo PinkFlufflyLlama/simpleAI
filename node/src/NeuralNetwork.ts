@@ -1,3 +1,0 @@
-class NeuralNetwork {}
-
-export { NeuralNetwork };
