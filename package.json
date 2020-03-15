@@ -21,6 +21,7 @@
     "AI"
   ],
   "dependencies": {
+    "gpu.js": "^2.8.1",
     "typescript": "^3.8.3"
   }
 }
