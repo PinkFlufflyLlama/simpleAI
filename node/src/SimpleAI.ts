@@ -1,4 +1,4 @@
-import { GPU } from "gpu.js";
+//import { GPU, IKernelRunShortcut } from "gpu.js";
 
 class Node {
 
@@ -43,7 +43,7 @@ class SimpleAI {
    private layerSizes: Number[];
    private network: Layer[];
 
-   constructor(layerSizes: Number[]) {
+   constructor(layerSizes: number[]) {
 
       this.layerSizes = layerSizes;
 
@@ -60,10 +60,13 @@ class SimpleAI {
          return 100 / (Math.random() - 0.5);
       };
 
-
       this.network = [];
-      for (let i = 0; i != layerSizes.length; ++i) {
-         this.network.push(new Layer(layerSizes[i]));
+      for (let i=0; i!=layerSizes.length; ++i) {
+         if (i == 0) {
+            this.network.push(new Layer(layerSizes[i]));
+         } else {
+            this.network.push(new Layer(layerSizes[i], this.network[i-1]));
+         }
       }
 
    };
@@ -88,4 +91,15 @@ class SimpleAI {
    
 }
 
-export default SimpleAI;
+class Batch {
+
+}
+
+const Exporter = {
+   SimpleAI : SimpleAI,
+   Batch : Batch
+};
+
+
+
+export default Exporter;
